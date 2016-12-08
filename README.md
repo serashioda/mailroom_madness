@@ -16,25 +16,30 @@ def donor_list(prompt, validator=None):
 """ data structure that holds list of donors, and history of donation amounts """
 
 
-""" Once run, this script will prompt user choice: ‘Send a Thank You’ or ‘Create a Report’.
 def user_choice():
+    """ Once run, this script will prompt user choice: ‘Send a Thank You’ or ‘Create a Report’.
 
 
-""" If user selects ‘Send a Thank You’, prompt for a Full Name. """
 def thanks_or_no():
-    if
-    """ User chooses to send thank you. """
+    """ If user selects ‘Send a Thank You’, prompt for a Full Name. """
+    if____:
     thank_you = prompt("Please enter the donor's full name?")
 
 
 
+    elif____:
+    """ this handles option to fill out report instead of thank you """
 
+
+    else:
     """ handles invalid/no input from user (from assignment example) """
-    while reply is None:
-      reply = ask_for_input(prompt)
-      if there_is_a_validator:
-        validate_the_reply
-    return reply
+        while reply is None:
+          reply = ask_for_input(prompt)
+          if there_is_a_validator:
+            validate_the_reply
+        return reply
+
+
 
 <!-- def get_user_input(prompt, validator=None):
     """return the value input by a user prompted by `prompt`
