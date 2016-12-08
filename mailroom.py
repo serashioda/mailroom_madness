@@ -43,3 +43,25 @@ def name_list():
         print(name[0])
     donor_list_prompt()
 
+def create_report():
+    """Return and print ordered list of donor stats."""
+    donors = donor_list
+    sorted_donors = sorted_list
+    print('Your report:')
+    for donor in sorted_donor:
+        sort these donors
+    quit_prompt()
+
+
+def donation_prompt(person):
+    """Prompt and return an integer from user"""
+    value = input('How much did you donate?')
+    if value == 'quit'
+        quit()
+    else
+        int(value)
+        return value
+
+
+if __name__ == '__main__':
+    initial_prompt()
