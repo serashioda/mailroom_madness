@@ -49,19 +49,45 @@ def create_report():
     sorted_donors = sorted_list
     print('Your report:')
     for donor in sorted_donor:
-        sort these donors
+        line = ('{0} has donated a total of ${1} in {2} donations at ${3} per '
+                'donation.'.format(donor[0], donor[1], donor[2], donor[3]))
+        print(line)
     quit_prompt()
 
 
 def donation_prompt(person):
     """Prompt and return an integer from user"""
-    value = input('How much did you donate?')
+    value = input('How much did {name} donate? Type quit to quit'.format(person))
     if value == 'quit'
         quit()
     else
         int(value)
         return value
 
+
+def update_donations(person):
+    """Update donor values."""
+
+def generate_text(donors):
+    """Return list of donors."""
+
+def write_file(text):
+    """Write donor list to .txt file."""
+
+def generate_email(person, donations):
+    """Generate email for donor."""
+
+def donor_calc(donations, value):
+    """Return donation values."""
+
+def read_donors():
+    """Return donor txt file."""
+
+def donor_list(readfile, choice):
+    """Return list or dictionary depending on user choice."""
+
+def sorted_list(first):
+    """Return sorted list of donors from biggest donations to smallest donations."""
 
 if __name__ == '__main__':
     initial_prompt()
