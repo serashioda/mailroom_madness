@@ -7,7 +7,7 @@ def initial_prompt():
     prompt = input('Select from the following options: ' 'Create report', 'Send thank you', 'Quit')
     if prompt == 'quit':
         quit()
-    elif prompt == 'create report': 
+    elif prompt == 'create report':
         create_report()
     elif prompt == 'send thank you':
         donor_list()
@@ -18,21 +18,71 @@ def initial_prompt():
 
 def quit_prompt():
     """Bring up prompt to quit the program"""
-    prompt = input('Quit?')
+    prompt = input('Type 'Quit' to confirm, otherwise type 'Go back')
     if prompt == 'quit':
         quit()
+    elif prompt == 'Go back'
+        initial_prompt()
     else:
         print('Not a valid selection.')
         quit_prompt()
 
 
+def donor_dict(donor):
+    donors = donor_list
+    dict = {}
+    for donor in donors in enumerate():
+        if index % 3
+        dict[item] = a[index+1]
+        return dict['first name', 'last name', 'total donations', 'average donation'] = 'donor[0]', 'donor[1]', 'donor[2]', 'donor[4]'
+    my_dict = {}
+
+dict = {}
+a = [('sera', 'smith', 500), ('doge', 'shioda', 250), ('casey', 'Okane', 350)]
+
+a = zip(first, last, amount)
+
+for name, profession in a:
+    professions_dict[name] = profession
+
+a = [('sera', 'smith', 500), ('doge', 'shioda', 250), ('casey', 'Okane', 350)]
+dict = {}
+a = zip(first, last, amount)
+print a
+
+for name, profession in a:
+    professions_dict[name] = profession
+
+dict
+
+
+    def create_dic(text):
+    """Return {} with key value pairs"""
+    first = text.split(' ')
+    dic = {}
+    for words in range(0, len(first) - 2):
+        couple = "{0} {1}".format(first[words], first[words + 1])
+        value = first[words + 2]
+        dic.setdefault(couple, []).append(value)
+    return dic
+
+
 def donor_list_prompt():
     """Prompt user for a name or to view donor list."""
-    prompt = input('Type donor name or list to see a list of donors')
-    if prompt == 'list':
+    prompt = input('Type a donor name or 'donors' to see a list of donors')
+    if prompt == 'donors':
         name_list()
     else:
         update_donations(prompt)
+
+
+def update_donations(donor):
+    """Update donor values."""
+    f_name, l_name, d_amount = prompt
+    prompt = input('Enter: First Name, Last Name, Donation Amount').split
+        return f_name, l_name, int(d_amount)
+    for donor in donors
+    donor.append(doner_list)
 
 
 def name_list():
@@ -41,7 +91,7 @@ def name_list():
     print('List of donors:')
     for name in donors:
         print(name[0])
-    donor_list_prompt()
+        donor_list_prompt()
 
 def create_report():
     """Return and print ordered list of donor stats."""
@@ -50,9 +100,10 @@ def create_report():
     print('Your report:')
     for donor in sorted_donor:
         line = ('{0} has donated a total of ${1} in {2} donations at ${3} per '
-                'donation.'.format(donor[0], donor[1], donor[2], donor[3]))
+        'donation.'.format(donor[0], donor[1], donor[2], donor[3]))
         print(line)
-    quit_prompt()
+        quit_prompt()
+
 
 
 def donation_prompt(person):
@@ -65,8 +116,6 @@ def donation_prompt(person):
         return value
 
 
-def update_donations(person):
-    """Update donor values."""
 
 def generate_text(donors):
     """Return list of donors."""

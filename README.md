@@ -40,7 +40,6 @@ def thanks_or_no():
         return reply
 
 
-
 <!-- def get_user_input(prompt, validator=None):
     """return the value input by a user prompted by `prompt`
 
