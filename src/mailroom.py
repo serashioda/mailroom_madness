@@ -17,11 +17,11 @@ def initial_prompt():
 
 
 def quit_prompt():
-    """Bring up prompt to quit the program. """
-    prompt = input('Type 'Quit' to confirm, otherwise type 'Go back')
-      if prompt == 'quit':
+    """Bring up prompt to quit the program."""
+    prompt = input('Type \'Quit\' to confirm, otherwise type \'Go back\'')
+    if prompt == 'quit':
         quit()
-    elif prompt == 'Go back'
+    elif prompt == 'Go back':
         initial_prompt()
     else:
         print('Not a valid selection.')
@@ -29,18 +29,19 @@ def quit_prompt():
 
 
 def donor_dict(donor):
+    """Return the donor list info."""
     donors = donor_list
     dict = {}
-    for donor in donors in enumerate():
-        if index % 3
-        dict[item] = a[index+1]
-        return dict['first name', 'last name', 'total donations', 'average donation'] = 'donor[0]', 'donor[1]', 'donor[2]', 'donor[4]'
+    # for donor in donors in enumerate():
+    #     if index % 3:
+    #         dict[item] = a[index + 1]
+    # return dict['first name', 'last name', 'total donations', 'average donation'] = 'donor[0]', 'donor[1]', 'donor[2]', 'donor[4]'
     my_dict = {}
 
-dict = {}
-a = [('sera', 'smith', 500), ('doge', 'shioda', 250), ('casey', 'Okane', 350)]
+# dict = {}
+# a = [('sera', 'smith', 500), ('doge', 'shioda', 250), ('casey', 'Okane', 350)]
 
-a = zip(first, last, amount)
+# a = zip(first, last, amount)
 
 
 # def create_dict(text):
@@ -56,20 +57,20 @@ a = zip(first, last, amount)
 
 def donor_list_prompt():
     """Prompt user for a name or to view donor list."""
-    prompt = input('Type a donor name or 'donors' to see a list of donors')
+    prompt = input('Type a donor name or \'donors\' to see a list of donors')
     if prompt == 'donors':
         name_list()
     else:
         update_donations(prompt)
 
 
-def update_donations(donor):
+def update_donations(donors):
     """Update donor values."""
-    f_name, l_name, d_amount = prompt
     prompt = input('Enter: First Name, Last Name, Donation Amount').split
+    f_name, l_name, d_amount = prompt
     return f_name, l_name, int(d_amount)
-    for donor in donors
-    donor.append(donor_list)
+    for donor in donors:
+        donor.append(donor_list)
 
 
 def name_list():
