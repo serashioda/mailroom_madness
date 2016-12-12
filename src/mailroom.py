@@ -4,7 +4,7 @@ import io
 
 def initial_prompt():
     """Prompt the user for their choice."""
-    prompt = input('Select from the following options: ' 'Create report', 'Send thank you', 'Quit')
+    prompt = input('Select from the following options: Create report, Send thank you, Quit')
     if prompt == 'quit':
         quit()
     elif prompt == 'create report':
@@ -17,7 +17,7 @@ def initial_prompt():
 
 
 def quit_prompt():
-    """Bring up prompt to quit the program"""
+    """Bring up prompt to quit the program. """
     prompt = input('Type 'Quit' to confirm, otherwise type 'Go back')
       if prompt == 'quit':
         quit()
@@ -42,29 +42,16 @@ a = [('sera', 'smith', 500), ('doge', 'shioda', 250), ('casey', 'Okane', 350)]
 
 a = zip(first, last, amount)
 
-for name, profession in a:
-    professions_dict[name] = profession
 
-a = [('sera', 'smith', 500), ('doge', 'shioda', 250), ('casey', 'Okane', 350)]
-dict = {}
-a = zip(first, last, amount)
-print a
-
-for name, profession, amount in a:
-    professions_dict[name] = profession
-
-dict
-
-
-def create_dic(text):
-    """Return {} with key value pairs."""
-    first = text.split(' ')
-    dic = {}
-    for words in range(0, len(first) - 2):
-        couple = "{0} {1}".format(first[words], first[words + 1])
-        value = first[words + 2]
-        dic.setdefault(couple, []).append(value)
-    return dic
+# def create_dict(text):
+#     """Return {} with key value pairs."""
+#     first = text.split(' ')
+#     dic = {}
+#     for words in range(0, len(first) - 2):
+#         couple = "{0} {1}".format(first[words], first[words + 1])
+#         value = first[words + 2]
+#         dic.setdefault(couple, []).append(value)
+#     return dic
 
 
 def donor_list_prompt():
@@ -82,7 +69,7 @@ def update_donations(donor):
     prompt = input('Enter: First Name, Last Name, Donation Amount').split
     return f_name, l_name, int(d_amount)
     for donor in donors
-    donor.append(doner_list)
+    donor.append(donor_list)
 
 
 def name_list():
