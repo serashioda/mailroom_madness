@@ -4,28 +4,23 @@ import io
 
 def initial_prompt():
     """Prompt the user for their choice."""
-    prompt = input('Select from the following options: Create report, Send thank you, Quit')
-    if prompt == 'quit':
-        quit()
-    elif prompt == 'create report':
-        create_report()
-    elif prompt == 'send thank you':
-        donor_list()
-    else:
-        print('Not a valid selection')
-        initial_prompt()
+    while True:
+        prompt = input('Select from the following options: Create report, Send thank you, Quit: ')
+        if prompt == 'quit':
+            quit_prompt()
+        elif prompt == 'create report':
+            create_report()
+        elif prompt == 'send thank you':
+            donor_list()
+        else:
+            print('Not a valid selection')
 
 
 def quit_prompt():
     """Bring up prompt to quit the program."""
-    prompt = input('Type \'Quit\' to confirm, otherwise type \'Go back\'')
+    prompt = input('Type \'Quit\' to confirm, otherwise type \'Go back\'').lower()
     if prompt == 'quit':
         quit()
-    elif prompt == 'Go back':
-        initial_prompt()
-    else:
-        print('Not a valid selection.')
-        quit_prompt()
 
 
 def donor_dict(donor):
