@@ -33,7 +33,6 @@ def quit_prompt():
     if prompt == 'quit':
         quit()
 
-
 def send_thanks():
     donor = Donor()
     donor.first_name = 'list'
@@ -62,26 +61,30 @@ def get_donor(donor):
     donors.append(donor)
     return donor
 
+
+def name_list():
+    """returns list of all donor names."""
+    for d in donors:
+        print("{0} {1}".format(d.first_name, d.last_name))
+
 def create_report():
     """Return and print ordered list of donor stats."""
-    donors = donor_list
-    sorted_donors = sorted_list
     print('Your report:')
-    for donor in sorted_donor:
-        line = ('{0} has donated a total of ${1} in {2} donations at ${3} per''donation.'.format(donor[0], donor[1], donor[2], donor[3]))
+    for donor in donors:
+        avg = donor.total_amount/len(donor.donations)
+        line = ('{0} {1} has donated a total of ${2} in {3} donations at ${4} per donation.'.format(donor.first_name, donor.last_name, donor.total_amount, len(donor.donations), avg))
         print(line)
-        quit_prompt()
 
-def generate_text(donors):
-    """Return list of donors."""
-    people = list(donors.keys())
-    text_string = ' '
-    for donor in people:
-        values = donors[donor]
-        temp_val = ('{0}:{1} {2}'
-                    '{3}\n'.format(donor, values[0], values[1], values[2]))
-        text_string = text_string + temp_val
-        return text_string
+# def generate_text(donors):
+#     """Return list of donors."""
+#     people = list(donors.keys())
+#     text_string = ' '
+#     for donor in people:
+#         values = donors[donor]
+#         temp_val = ('{0}:{1} {2}'
+#                     '{3}\n'.format(donor, values[0], values[1], values[2]))
+#         text_string = text_string + temp_val
+#         return text_string
 
 def generate_email(donor):
     """Generate email for donor."""
