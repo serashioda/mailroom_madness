@@ -1,6 +1,4 @@
-"""Psuedo code to create email and report from a list of donors."""
-import io
-
+"""Code to create email and report from a list of donors."""
 donors = []
 
 
@@ -9,8 +7,18 @@ class Donor:
 
     first_name = ""
     last_name = ""
-    donations = []
+    donations = 0
     total_amount = 0
+
+    @classmethod
+    def create(cls, first_name, last_name, donations, total_amount):
+        """Create an instance of Donor for testing."""
+        d = Donor()
+        d.first_name = first_name
+        d.last_name = last_name
+        d.donations = donations
+        d.total_amount = total_amount
+        return d
 
 
 def initial_prompt():
@@ -20,7 +28,7 @@ def initial_prompt():
         if prompt == 'quit':
             quit_prompt()
         elif prompt == 'create report':
-            create_report()
+            create_report(donors)
         elif prompt == 'send thank you':
             send_thanks()
         else:
@@ -33,28 +41,31 @@ def quit_prompt():
     if prompt == 'quit':
         quit()
 
+
 def send_thanks():
+    """Check if donor exists in system and otherwise prompts for input to add full name and amount."""
     donor = Donor()
     donor.first_name = 'list'
     while donor.first_name == 'list':
         donor.first_name = input('Type first name of the donor OR type \'list\' to see a list of donors: ')
         if donor.first_name == 'list':
-            name_list()
+            name_list(donors)
     donor.last_name = input('Type the last name of the donor: ')
     amount = 0
     while amount == 0:
-        userInput = input('Enter donation amount: ')
+        user_input = input('Enter donation amount: ')
         try:
-            amount = int(userInput)
+            amount = int(user_input)
         except ValueError:
             print('Invalid input. Enter a number: ')
-    d = get_donor(donor)
-    d.donations.append(amount)
+    d = get_donor(donor, donors)
+    d.donations += 1
     d.total_amount += amount
-    generate_email(d)
+    generate_email(d, amount)
 
-def get_donor(donor):
-    """Checks if inputted donor already exists in the system."""
+
+def get_donor(donor, donors):
+    """Check if inputted donor already exists in the system."""
     for d in donors:
         if d.first_name == donor.first_name and d.last_name == donor.last_name:
             return d
@@ -62,33 +73,27 @@ def get_donor(donor):
     return donor
 
 
-def name_list():
-    """returns list of all donor names."""
+def name_list(donors):
+    """Return list of all donor names."""
     for d in donors:
         print("{0} {1}".format(d.first_name, d.last_name))
 
-def create_report():
+
+def create_report(donor_list):
     """Return and print ordered list of donor stats."""
     print('Your report:')
-    for donor in donors:
-        avg = donor.total_amount/len(donor.donations)
-        line = ('{0} {1} has donated a total of ${2} in {3} donations at ${4} per donation.'.format(donor.first_name, donor.last_name, donor.total_amount, len(donor.donations), avg))
+    donor_list.sort(key=lambda x: x.total_amount)
+    print('FIRST\t\tLAST\t\tTOTAL\tCOUNT\tAVG')
+    for donor in donor_list:
+        avg = donor.total_amount / donor.donations
+        line = ('{0}\t\t{1}\t\t${2}\t{3}\t${4}'.format(donor.first_name, donor.last_name, donor.total_amount, donor.donations, avg))
         print(line)
 
-# def generate_text(donors):
-#     """Return list of donors."""
-#     people = list(donors.keys())
-#     text_string = ' '
-#     for donor in people:
-#         values = donors[donor]
-#         temp_val = ('{0}:{1} {2}'
-#                     '{3}\n'.format(donor, values[0], values[1], values[2]))
-#         text_string = text_string + temp_val
-#         return text_string
 
-def generate_email(donor):
+def generate_email(donor, amount):
     """Generate email for donor."""
-    print('\nWell met {0} {1}!,\n We would like to thank you for your donation of ${2}.'.format(donor.first_name, donor.last_name, donor.donations[-1]))
+    print('\nWell met {0} {1}!,\n We would like to thank you for your donation of ${2}.'.format(donor.first_name, donor.last_name, amount))
+
 
 if __name__ == '__main__':
     initial_prompt()
