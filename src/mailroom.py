@@ -1,6 +1,13 @@
 """Psuedo code to create email and report from a list of donors."""
 import io
 
+donors = []
+
+def Donor
+    first_name = ""
+    last_name = ""
+    total_amount = 0
+
 
 def initial_prompt():
     """Prompt the user for their choice."""
@@ -33,11 +40,6 @@ def donor_dict(donor):
     # return dict['first name', 'last name', 'total donations', 'average donation'] = 'donor[0]', 'donor[1]', 'donor[2]', 'donor[4]'
     my_dict = {}
 
-# dict = {}
-# a = [('sera', 'smith', 500), ('doge', 'shioda', 250), ('casey', 'Okane', 350)]
-
-# a = zip(first, last, amount)
-
 
 # def create_dict(text):
 #     """Return {} with key value pairs."""
@@ -61,9 +63,11 @@ def donor_list_prompt():
 
 def update_donations(donors):
     """Update donor values."""
-    prompt = input('Enter: First Name, Last Name, Donation Amount').split
-    f_name, l_name, d_amount = prompt
-    return f_name, l_name, int(d_amount)
+    new_donor = Donor()
+    new_donor.first_name = input('Please type first name of donor: ')
+    new_donor.last_name = input('Please type last name of donor: ')
+    new_donor.total_amount = input('Please type donation amount: ')
+
     for donor in donors:
         donor.append(donor_list)
 
